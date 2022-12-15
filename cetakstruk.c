@@ -3,7 +3,7 @@
 #include <string.h>
 #include "custom.h"
 
-void cetakstruk(int order_id, int total, int bayar, int kembali){
+void cetakstruk(int order_id){
     FILE *f;
     struct struk struk;
     int found = 0;
@@ -36,7 +36,12 @@ void cetakstruk(int order_id, int total, int bayar, int kembali){
             printf("------------------------------------------------------------\n");
             printf("%-10s: %-7d\n","Total",total);
             printf("%-10s: %-7d\n","Bayar",bayar);
+            if (total==bayar)
+            {
+               printf("%-10s: 0000\n","Kembali");
+            }else{
             printf("%-10s: %-7d\n","Kembali",kembali);
+            }
             printf("------------------------------------------------------------\n");
             printf("Terima kasih telah berbelanja di toko kami.\n");
         }

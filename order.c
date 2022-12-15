@@ -120,18 +120,18 @@ void order(){
         printf("Total Belanja anda sebesar: %d\n",total);
         while (1){
             printf("Masukkan uang: ");
-            int uang;
-            scanf("%d",&uang);
-            if (uang<total)
+            scanf("%d",&bayar);
+            if (bayar<total)
             {
                 printf("Uang tidak cukup.\n");
             }
-            else if(uang>=total){
-                if (uang>total)
+            else if(bayar>=total){
+                if (bayar>total)
                 {
-                kembali=uang-total;
+                kembali=bayar-total;
                 printf("Total Kembalian anda sebesar: %d\n",kembali);
-                }else{
+                }else if (bayar==total){
+                kembali=0;
                 printf("Uang belanja pas!\n");
                 }
                 char cetak[2];
@@ -139,7 +139,7 @@ void order(){
                 scanf("%s",cetak);
                 if (!strcmp(cetak,"y"))
                 {
-                cetakstruk(order_id,total,uang,kembali);
+                cetakstruk(order_id);
                 total = 0;
                 break;
                 }else if (!strcmp(cetak,"n")){
@@ -149,6 +149,7 @@ void order(){
                 }
             }
         }
+        kembali=0;
     }
     }
 }

@@ -37,15 +37,6 @@ struct struk
     int m;
     int d;
 };
-struct pembayaran
-{
-    int order_id;
-    int total;
-    int bayar;
-    int kembali;
-};
-
-
 int total;
 int bayar;
 int kembali;
@@ -69,7 +60,7 @@ void order();
 void login();
 void listbarang();
 void riwayatorder();
-void cetakstruk(int order_id, int total, int bayar, int kembali);
+void cetakstruk(int order_id);
 void keuangan();
 void laphari();
 void lapbulan();
